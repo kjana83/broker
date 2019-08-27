@@ -23,6 +23,18 @@
          * ==========================================
          *
          */
+
+         .h5, h5 {
+    font-size: 1.00rem;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    font-size: 12px;
+}
+
          .dh {
          display: -webkit-box;
          display: -ms-flexbox;
@@ -149,7 +161,7 @@
          
            var options = {         
              chart: {         
-               height: 316,
+               height: 270,
                type: 'bar',
                       },
                       plotOptions: {
@@ -195,64 +207,37 @@
              document.querySelector("#chart"),
              options
            );
-         
-         
+                
          
            chart.render();
          
-         
-         
+                 
            //dout chart
          
-         
-         
-         
-         
-         
-         
            var optionsd = {
-         
-             chart: {
-         
-               type: 'donut',
-         
-             },
-         
-             series: [44, 55, 41, 17, 15],
-         
-             responsive: [{
-         
-               breakpoint: 480,
-         
-               options: {
-         
-                 chart: {
-         
-                   width: 270
-         
-                 },
-         
-                 legend: {
-         
-                   position: 'bottom'
-         
-                 }
-         
-               }
-         
-             }]
-         
-           }
-         
-         
-         
-           var chart = new ApexCharts(
-         
-             document.querySelector("#doutchart"),
-         
-             optionsd
-         
-           );
+                      chart: {
+                        type: 'donut',
+                      },
+                  
+                      labels:  ['Alberta', 'Manitoba', 'Newfoundland', 'Ontario', 'Quebec'],
+                     series: [44, 17, 41, 55, 15],
+                       responsive: [{         
+                     breakpoint: 480,
+                        options: {
+                           chart: {
+                            width: 270
+                          },
+                          legend: {
+                            position: 'bottom'
+                          }
+                        }
+                      }]
+                    }
+            
+                    var chart = new ApexCharts(
+                      document.querySelector("#doutchart"),
+                      optionsd
+                    );
          
          
          
@@ -347,62 +332,71 @@
                class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
             <!-- Demo content -->
             <h2 class="display-4 text-white">Broker portal</h2>
-            <p class="lead text-white mb-0">Quick stats</p>
+            <p class="lead text-white mb-0">
+                  <span class="text-light font-italic bold">
+             <h2>  Quick stats</h2></span></p>
             <div class="separator"></div>
             <div class="row">
-               <div class="col-xs-12 col-md-2">
-                  <div class="card cardpolicy" style="width: 10rem;">
-                     <div class="card-body">
-                        <h5 class="card-title">Clients</h5>
-                        <div class="smallseparator"></div>
-                        <p class="card-text colorwhite">2</p>
+                  <div class="col-xs-12 col-md-2">
+                     <div class="card cardpolicy" style="width: 12rem;">
+                        <div class="card-body">
+                           <h5 class="card-title">Clients</h5>
+                           <div class="smallseparator"></div>
+                           <p class="card-text colorwhite">2</p>
+                        </div>
+                     </div>
+                  </div>
+   
+                  <div class="col-xs-12 col-md-2">
+                        <div class="card cardpolicy" style="width: 12rem;">
+                           <div class="card-body">
+                              <h5 class="card-title">Policies</h5>
+                              <div class="smallseparator"></div>
+                              <p class="card-text colorwhite">7</p>
+                           </div>
+                        </div>
+                     </div>
+          
+                  <div class="col-xs-12 col-md-2">
+                     <div class="card cardpolicy" style="width: 12rem;">
+                        <div class="card-body">
+                           <h5 class="card-title">Sales</h5>
+                           <div class="smallseparator"></div>
+                           <p class="card-text colorwhite">2</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-md-2">
+                     <div class="card cardpolicy" style="width: 12rem;">
+                        <div class="card-body">
+                           <h5 class="card-title">Conversion </h5>
+                           <div class="smallseparator"></div>
+                           <p class="card-text colorwhite">1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-md-2">
+                     <div class="card cardpolicy" style="width: 13rem;">
+                        <div class="card-body">
+                           <h5 class="card-title">Policy Reinstatement</h5>
+                           <div class="smallseparator"></div>
+                           <p class="card-text colorwhite">2</p>
+                        </div>
                      </div>
                   </div>
                </div>
-               <div class="col-xs-12 col-md-2">
-                  <div class="card cardpolicy" style="width: 10rem;">
-                     <div class="card-body">
-                        <h5 class="card-title">Policies</h5>
-                        <div class="smallseparator"></div>
-                        <p class="card-text colorwhite">7</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-md-2">
-                  <div class="card cardpolicy" style="width: 10rem;">
-                     <div class="card-body">
-                        <h5 class="card-title">Sales</h5>
-                        <div class="smallseparator"></div>
-                        <p class="card-text colorwhite">$100000</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-md-2">
-                  <div class="card cardpolicy" style="width: 10rem;">
-                     <div class="card-body">
-                        <h5 class="card-title">Conversion</h5>
-                        <div class="smallseparator"></div>
-                        <p class="card-text colorwhite">$405111</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-md-2">
-                  <div class="card cardpolicy" style="width: 10rem;">
-                     <div class="card-body">
-                        <h5 class="card-title">Sales</h5>
-                        <div class="smallseparator"></div>
-                        <p class="card-text colorwhite">$100000</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
             <div class="separator"></div>
             <div class="row">
                <div class="col-xs-12 col-md-8">
-                  <p class="lead text-white mb-0">Quote – NB count daily/hourly</p>
+                  <p class="lead text-white mb-2">
+                  <span class="text-light font-italic bold">
+                        <h2>   Quote – NB count daily/hourly</h2></span></p>
                </div>
                <div class="col-xs-6 col-md-4">
-                  <p class="lead text-white mb-0"> Rolling Commission</p>
+                     <p class="lead text-white mb-2">
+                           <span class="text-light font-italic bold">
+                                 <h2>   Rolling Commission</h2></span></p>
+                
                </div>
             </div>
             <div class="row">
@@ -416,97 +410,125 @@
                </div>
             </div>
             <div class="separator"></div>
+
+  
+        
             <div class="row">
-               <div class="col-xs-12 col-md-8">
-                  <p class="lead text-white mb-0" data-toggle="collapse" [attr.data-target]="collapsepending">Pending
-                     Underwriting Approval
-                  </p>
+               <div class="col-xs-12 col-md-6">
+                  <div class="left-panel-list">
+                     <div>
+                        <span class="arrow"></span>
+                     </div>
+                  </div>
+              
+
+                     <h4> <p class="lead text-black mb-0"  data-toggle="collapse" href="#multiCollapseExample1"
+                        aria-expanded="false" aria-controls="multiCollapseExample1"> 
+                        <a  class="text-black font-italic bold">
+                              <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
+                              Pending Underwriting Approval
+                              </a>
+                       </p></h4>
+
+
+
+                  <div class="collapse" id="multiCollapseExample1">
+                     <table class="table">
+                        <thead>
+                           <tr>
+                              <th scope="col">Date</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Request#</th>
+                              <th scope="col">Reason</th>
+                              <th scope="col">Recipient</th>
+                              <th scope="col">Policy No.</th>
+                              <th scope="col">Transaction</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th>Sep 10,2015</th>
+                              <td>Open</td>
+                              <td>7026</td>
+                              <td>Eligibility</td>
+                              <th >Ontario service</th>
+                              <td>test114455
+                              </td>
+                              <td>Policy Inquiry</td>
+                              
+                           </tr>
+                           <tr>
+                                 <th>Oct 12,2015</th>
+                                 <td>Open</td>
+                                 <td>6565</td>
+                                 <td>Eligibility</td>
+                                 <th >Underwriter1</th>
+                                 <td>test11412
+                                    </td>
+                                 <td>Policy Inquiry</td>
+                           </tr>
+                           <tr>
+                                 <th>Mar 10,2015</th>
+                                 <td>Open</td>
+                                 <td>5454</td>
+                                 <td>Eligibility</td>
+                                 <th >Ontario service</th>
+                                 <td>test11445555
+                                    </td>
+                                 <td>Renewal Rewrite</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
                </div>
-               <div class="col-xs-6 col-md-4">
-                  <p class="lead text-white mb-0"> Renewal List</p>
+               <div class="col-xs-12 col-md-6">
+                  <div class="left-panel-list">
+                     <div>
+                        <span class="arrow"></span>
+                     </div>
+                  </div>
+                 <h4> <p class="lead text-black mb-0"  data-toggle="collapse" href="#renewalList"
+                  aria-expanded="false" aria-controls="renewalList"> 
+                  <a  class="text-black font-italic bold">
+                        <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
+                        Renewal List
+                        </a>
+                 </p></h4>
+                  <div  class="collapse" id="renewalList">
+                     <table class="table">
+                        <thead>
+                           <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Ref no</th>
+                              <th scope="col">Client</th>
+                              <th scope="col">Product</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th scope="row">1</th>
+                              <td>APL-1545</td>
+                              <td>Otto</td>
+                              <td>Auto</td>
+                           </tr>
+                           <tr>
+                              <th scope="row">2</th>
+                              <td>APL-0545</td>
+                              <td>Thornton</td>
+                              <td>Property</td>
+                           </tr>
+                           <tr>
+                              <th scope="row">3</th>
+                              <td>APL-1245</td>
+                              <td>the Bird</td>
+                              <td>Auto</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
                </div>
             </div>
             <div class="separator"></div>
-            <div class="row">
-               <div class="col-xs-12 col-md-6">
-                  <div class="left-panel-list">
-                     <div>
-                        <span class="arrow"></span>
-                     </div>
-                  </div>
-                  <div id="collapsepending">
-                     <table class="table">
-                        <thead>
-                           <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Ref no</th>
-                              <th scope="col">Client</th>
-                              <th scope="col">Product</th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                           </tr>
-                           <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                           </tr>
-                           <tr>
-                              <th scope="row">3</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-md-6">
-                  <div class="left-panel-list">
-                     <div>
-                        <span class="arrow"></span>
-                     </div>
-                  </div>
-                  <div id="collapsepending">
-                     <table class="table">
-                        <thead>
-                           <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Ref no</th>
-                              <th scope="col">Client</th>
-                              <th scope="col">Product</th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                           </tr>
-                           <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                           </tr>
-                           <tr>
-                              <th scope="row">3</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </div>
-               </div>
-            </div>
          </div>
          <!-- End demo content -->
       </div>
