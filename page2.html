@@ -1,554 +1,1163 @@
 <html>
-   <head>
-      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-      <title>Broker portal demo</title>
-      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-      <meta name="robots" content="noindex, nofollow">
-      <meta name="googlebot" content="noindex, nofollow">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script
-         type="text/javascript">(function () { var walkme = document.createElement('script'); walkme.type = 'text/javascript'; walkme.async = true; walkme.src = 'https://cdn.walkme.com/users/e236c9962dab4d6c81e44e34819dafe6/walkme_e236c9962dab4d6c81e44e34819dafe6_https.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(walkme, s); window._walkmeConfig = { smartLoad: true }; })();</script>
-      <link rel="stylesheet" type="text/css"
-         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-      <script type="text/javascript"
-         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-      <link rel="stylesheet" type="text/css"
-         href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <style id="compiled-css" type="text/css">
-         /*
-         *
-         * ==========================================
-         * CUSTOM UTIL CLASSES
-         * ==========================================
-         *
-         */
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Broker portal demo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-         .h5, h5 {
-    font-size: 1.00rem;
-}
+    <!-- Start of LiveChat (www.livechatinc.com) code -->
+    <script type="text/javascript">
+      window.__lc = window.__lc || {};
+      window.__lc.license = 11239822;
+      (function() {
+        var lc = document.createElement("script");
+        lc.type = "text/javascript";
+        lc.async = true;
+        lc.src =
+          ("https:" == document.location.protocol ? "https://" : "http://") +
+          "cdn.livechatinc.com/tracking.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(lc, s);
+      })();
+    </script>
+    <noscript>
+      <a href="https://www.livechatinc.com/chat-with/11239822/" rel="nofollow"
+        >Chat with us</a
+      >, powered by
+      <a
+        href="https://www.livechatinc.com/?welcome"
+        rel="noopener nofollow"
+        target="_blank"
+        >LiveChat</a
+      >
+    </noscript>
+    <!-- End of LiveChat code -->
 
-.table {
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
-    font-size: 12px;
-}
+    <script type="text/javascript">
+      (function() {
+        var walkme = document.createElement("script");
+        walkme.type = "text/javascript";
+        walkme.async = true;
+        walkme.src =
+          "https://cdn.walkme.com/users/e236c9962dab4d6c81e44e34819dafe6/test/walkme_e236c9962dab4d6c81e44e34819dafe6_https.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(walkme, s);
+        window._walkmeConfig = { smartLoad: true };
+      })();
+    </script>
 
-         .dh {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -ms-flex-wrap: wrap;
-         flex-wrap: wrap;
-         margin-right: -10px;
-         margin-left: -10px;
-         }
-         .cardpolicy {
-         background: #f8f9fa
-         }
-         .colorwhite {
-         color: black;
-         }
-         .vertical-nav {
-         min-width: 17rem;
-         width: 17rem;
-         height: 100vh;
-         position: fixed;
-         top: 0;
-         left: 0;
-         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-         transition: all 0.4s;
-         }
-         .bpn {
-         background-color: #1BC98E;
-         }
-         .ago {
-         padding: 1rem !important;
-         }
-         .rowQuick {
-         display: -ms-flexbox;
-         display: flex;
-         -ms-flex-wrap: wrap;
-         flex-wrap: wrap;
-         margin-right: -35px;
-         margin-left: -5px;
-         }
-         .page-content {
-         width: calc(100% - 17rem);
-         margin-left: 17rem;
-         transition: all 0.4s;
-         }
-         /* for toggle behavior */
-         #sidebar.active {
-         margin-left: -17rem;
-         }
-         #content.active {
-         width: 100%;
-         margin: 0;
-         }
-         @media (max-width: 768px) {
-         #sidebar {
-         margin-left: -17rem;
-         }
-         #sidebar.active {
-         margin-left: 0;
-         }
-         #content {
-         width: 100%;
-         margin: 0;
-         }
-         #content.active {
-         margin-left: 17rem;
-         width: calc(100% - 17rem);
-         }
-         #chart,
-         doutchart {
-         background: white;
-         }
-         .bpn {
-         background-color: #1BC98E;
-         }
-         }
-         /*
-         *
-         * ==========================================
-         * FOR DEMO PURPOSE
-         * ==========================================
-         *
-         */
-         body {
-         background: #599fd9;
-         background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
-         background: linear-gradient(to right, #599fd9, #c2e59c);
-         min-height: 100vh;
-         overflow-x: hidden;
-         }
-         .separator {
-         margin: 2rem 0;
-         border-bottom: 1px dashed #fff;
-         }
-         .smallseparator {
-         margin: 1rem 0;
-         border-bottom: 1px dashed #fff;
-         }
-         .text-uppercase {
-         letter-spacing: 0.1em;
-         }
-         .text-gray {
-         color: #aaa;
-         }
-      </style>
-      <!-- TODO: Missing CoffeeScript 2 -->
-      <script type="text/javascript">//<![CDATA[
-         window.onload = function () {
-         
-         
-         
-           $(function () {
-         
-             // Sidebar toggle behavior
-         
-             $('#sidebarCollapse').on('click', function () {
-         
-               $('#sidebar, #content').toggleClass('active');
-         
-             });
-         
-           });
-         
-         
-         
-           var options = {         
-             chart: {         
-               height: 270,
-               type: 'bar',
-                      },
-                      plotOptions: {
-                        bar: {         
-                 horizontal: true,
-                  dataLabels: {
-                    position: 'top',
-                          },
-                        }
-                      },
-                      dataLabels: {
-                        enabled: true,
-                        offsetX: -6,
-                        style: {
-                          fontSize: '12px',
-                          colors: ['#fff']
-                        }
-                      },
-                      stroke: {
-                        show: true,
-                        width: 1,
-                        colors: ['#fff']
-                      },
-                 series: [{
-                         name: "Property",
-                        data: [44, 55, 41, 20, 22]
-                      }, {
-                        name: "Auto",
-                        data: [53, 32, 33, 52, 13]
-                      }],
-         
-             xaxis: {
-         
-               categories: ['Alberta', 'Manitoba', 'Newfoundland', 'Ontario', 'Quebec'],
-         
-             },
-         
-         
-         
-           }
-         
-           var chart = new ApexCharts(         
-             document.querySelector("#chart"),
-             options
-           );
-                
-         
-           chart.render();
-         
-                 
-           //dout chart
-         
-           var optionsd = {
-                      chart: {
-                        type: 'donut',
-                      },
-                  
-                      labels:  ['Alberta', 'Manitoba', 'Newfoundland', 'Ontario', 'Quebec'],
-                     series: [44, 17, 41, 55, 15],
-                       responsive: [{         
-                     breakpoint: 480,
-                        options: {
-                           chart: {
-                            width: 270
-                          },
-                          legend: {
-                            position: 'bottom'
-                          }
-                        }
-                      }]
-                    }
-            
-                    var chart = new ApexCharts(
-                      document.querySelector("#doutchart"),
-                      optionsd
-                    );
-         
-         
-         
-           chart.render();
-         
-         
-         
-         
-         
-         }
-         
-         
-         
-         //]]>
-      </script>
-   </head>
-   <body>
-      <div class="row">
-         <!-- Vertical navbar -->
-         <div class="vertical-nav bg-white" id="sidebar">
-            <div class="py-4 px-3 mb-4 bg-light">
-               <div class="media d-flex align-items-center">
-                  <img
-                     src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png" alt="..." width="65"
-                     class="mr-3 rounded-circle img-thumbnail shadow-sm">
-                  <div class="media-body">
-                     <h4 class="m-0">Broker</h4>
-                     <p class="font-weight-light text-muted mb-0">Central-Division</p>
-                  </div>
-               </div>
-            </div>
-            <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
-            <ul class="nav flex-column bg-white mb-0">
-               <li class="nav-item">
-                  <a href="#" class="nav-link text-dark font-italic bg-light">
-                  <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                  Dashboard
-                  </a>
-               </li>
-               <li class="nav-item">
-                  <a href="#" class="nav-link text-dark font-italic">
-                  <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                  Policy
-                  </a>
-               </li>
-               <li class="nav-item">
-                  <a href="#" class="nav-link text-dark font-italic">
-                  <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
-                  Billing
-                  </a>
-               </li>
-               <li class="nav-item">
-                  <a href="#" class="nav-link text-dark font-italic">
-                  <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
-                  Document
-                  </a>
-               </li>
-            </ul>
-            <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">More..</p>
-            <ul class="nav flex-column bg-white mb-0">
-               <li class="nav-item">
-                  <a href="#" class="nav-link text-dark font-italic">
-                  <i class="fa  fa-suitcase                  mr-3 text-primary fa-fw"></i>
-                  Portfolio transfer
-                  </a>
-               </li>
-               <li class="nav-item">
-                  <a href="#" class="nav-link text-dark font-italic">
-                  <i class="fa fa-user mr-3 text-primary fa-fw"></i>
-                  Sanction broker user
-                  </a>
-               </li>
-               <li class="nav-item">
-                  <a href="#" class="nav-link text-dark font-italic">
-                  <i class="fa fa-search mr-3 text-primary fa-fw"></i>
-                  Customer Search
-                  </a>
-               </li>
-               <li class="nav-item">
-                  <a href="#" class="nav-link text-dark font-italic">
-                  <i class="fa  fa-asterisk                  mr-3 text-primary fa-fw"></i>
-                  Preferences
-                  </a>
-               </li>
-            </ul>
-         </div>
-         <!-- End vertical navbar -->
-         <!-- Page content holder -->
-         <div class="page-content p-5" id="content">
-            <!-- Toggle button -->
-            <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i
-               class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
-            <!-- Demo content -->
-            <h2 class="display-4 text-white">Broker portal</h2>
-            <p class="lead text-white mb-0">
-                  <span class="text-light font-italic bold">
-             <h2>  Quick stats</h2></span></p>
-            <div class="separator"></div>
-            <div class="row">
-                  <div class="col-xs-12 col-md-2">
-                     <div class="card cardpolicy" style="width: 12rem;">
-                        <div class="card-body">
-                           <h5 class="card-title">Clients</h5>
-                           <div class="smallseparator"></div>
-                           <p class="card-text colorwhite">2</p>
-                        </div>
-                     </div>
-                  </div>
-   
-                  <div class="col-xs-12 col-md-2">
-                        <div class="card cardpolicy" style="width: 12rem;">
-                           <div class="card-body">
-                              <h5 class="card-title">Policies</h5>
-                              <div class="smallseparator"></div>
-                              <p class="card-text colorwhite">7</p>
-                           </div>
-                        </div>
-                     </div>
-          
-                  <div class="col-xs-12 col-md-2">
-                     <div class="card cardpolicy" style="width: 12rem;">
-                        <div class="card-body">
-                           <h5 class="card-title">Sales</h5>
-                           <div class="smallseparator"></div>
-                           <p class="card-text colorwhite">2</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-xs-12 col-md-2">
-                     <div class="card cardpolicy" style="width: 12rem;">
-                        <div class="card-body">
-                           <h5 class="card-title">Conversion </h5>
-                           <div class="smallseparator"></div>
-                           <p class="card-text colorwhite">1</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-xs-12 col-md-2">
-                     <div class="card cardpolicy" style="width: 13rem;">
-                        <div class="card-body">
-                           <h5 class="card-title">Policy Reinstatement</h5>
-                           <div class="smallseparator"></div>
-                           <p class="card-text colorwhite">2</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            <div class="separator"></div>
-            <div class="row">
-               <div class="col-xs-12 col-md-8">
-                  <p class="lead text-white mb-2">
-                  <span class="text-light font-italic bold">
-                        <h2>   Quote – NB count daily/hourly</h2></span></p>
-               </div>
-               <div class="col-xs-6 col-md-4">
-                     <p class="lead text-white mb-2">
-                           <span class="text-light font-italic bold">
-                                 <h2>   Rolling Commission</h2></span></p>
-                
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-xs-12 col-md-7">
-                  <div id="chart" style="background: white">
-                  </div>
-               </div>
-               <div class="col-xs-6 col-md-5">
-                  <div id="doutchart" style="background: white">
-                  </div>
-               </div>
-            </div>
-            <div class="separator"></div>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style id="compiled-css" type="text/css">
+      /*
+        *
+        * ==========================================
+        * CUSTOM UTIL CLASSES
+        * ==========================================
+        *
+        */
 
-  
-        
-            <div class="row">
-               <div class="col-xs-12 col-md-6">
-                  <div class="left-panel-list">
-                     <div>
-                        <span class="arrow"></span>
-                     </div>
-                  </div>
-              
+    
+    .col-md-4 {
+      width: 33.33%;
+      padding: 0 25px;
+    }
 
-                     <h4> <p class="lead text-black mb-0"  data-toggle="collapse" href="#multiCollapseExample1"
-                        aria-expanded="false" aria-controls="multiCollapseExample1"> 
-                        <a  class="text-black font-italic bold">
-                              <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
-                              Pending Underwriting Approval
-                              </a>
-                       </p></h4>
+    table {
+      width: 100%;
+      background: white;
+    }
+
+    tbody tr {
+      border-top: 1px solid #e7e7e7;
+    }
+
+    th {
+      font-weight: bold;
+      font-family: Helvetica;
+      padding-bottom: 20px;
+    }
+    td, th {
+      width: 25%;
+      text-align: center;
+      height: 65px;
+    }
+
+    td div {
+      margin: 0 auto;
+    }
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    @media only screen and (max-width: 480px) {
+      th:first-child, td:first-child {
+        display: none;
+      }
+      .row {
+        display: block;
+      }
+      .col-md-4 {
+        padding: 0;
+        width: 100%;
+      }
+    }
+
+      .h5,
+      h5 {
+        font-size: 1rem;
+      }
+
+      .table {
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #212529;
+        font-size: 12px;
+      }
+
+      .dh {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -10px;
+        margin-left: -10px;
+      }
+      .cardpolicy {
+        background: #f8f9fa;
+      }
+      .colorwhite {
+        color: black;
+      }
+      .vertical-nav {
+        min-width: 17rem;
+        width: 17rem;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s;
+      }
+      .bpn {
+        background-color: #1bc98e;
+      }
+      .ago {
+        padding: 1rem !important;
+      }
+      .rowQuick {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -35px;
+        margin-left: -5px;
+      }
+      .page-content {
+        width: calc(100% - 17rem);
+        margin-left: 17rem;
+        transition: all 0.4s;
+      }
+      /* for toggle behavior */
+      #sidebar.active {
+        margin-left: -17rem;
+      }
+      #content.active {
+        width: 100%;
+        margin: 0;
+      }
+      @media (max-width: 768px) {
+        #sidebar {
+          margin-left: -17rem;
+        }
+        #sidebar.active {
+          margin-left: 0;
+        }
+        #content {
+          width: 100%;
+          margin: 0;
+        }
+        #content.active {
+          margin-left: 17rem;
+          width: calc(100% - 17rem);
+        }
+        #chart,
+        doutchart {
+          background: white;
+        }
+        .bpn {
+          background-color: #1bc98e;
+        }
+      }
+      /*
+        *
+        * ==========================================
+        * FOR DEMO PURPOSE
+        * ==========================================
+        *
+        */
+      body {
+        background: #599fd9;
+        background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+        background: linear-gradient(to right, #599fd9, #c2e59c);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      .separator {
+        margin: 2rem 0;
+        border-bottom: 1px dashed #fff;
+      }
+      .smallseparator {
+        margin: 1rem 0;
+        border-bottom: 1px dashed #fff;
+      }
+      .text-uppercase {
+        letter-spacing: 0.1em;
+      }
+      .text-gray {
+        color: #aaa;
+      }
+    </style>
 
 
 
-                  <div class="collapse" id="multiCollapseExample1">
-                     <table class="table">
-                        <thead>
-                           <tr>
-                              <th scope="col">Date</th>
-                              <th scope="col">Status</th>
-                              <th scope="col">Request#</th>
-                              <th scope="col">Reason</th>
-                              <th scope="col">Recipient</th>
-                              <th scope="col">Policy No.</th>
-                              <th scope="col">Transaction</th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <th>Sep 10,2015</th>
-                              <td>Open</td>
-                              <td>7026</td>
-                              <td>Eligibility</td>
-                              <th >Ontario service</th>
-                              <td>test114455
-                              </td>
-                              <td>Policy Inquiry</td>
-                              
-                           </tr>
-                           <tr>
-                                 <th>Oct 12,2015</th>
-                                 <td>Open</td>
-                                 <td>6565</td>
-                                 <td>Eligibility</td>
-                                 <th >Underwriter1</th>
-                                 <td>test11412
-                                    </td>
-                                 <td>Policy Inquiry</td>
-                           </tr>
-                           <tr>
-                                 <th>Mar 10,2015</th>
-                                 <td>Open</td>
-                                 <td>5454</td>
-                                 <td>Eligibility</td>
-                                 <th >Ontario service</th>
-                                 <td>test11445555
-                                    </td>
-                                 <td>Renewal Rewrite</td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </div>
-               </div>
-               <div class="col-xs-12 col-md-6">
-                  <div class="left-panel-list">
-                     <div>
-                        <span class="arrow"></span>
-                     </div>
-                  </div>
-                 <h4> <p class="lead text-black mb-0"  data-toggle="collapse" href="#renewalList"
-                  aria-expanded="false" aria-controls="renewalList"> 
-                  <a  class="text-black font-italic bold">
-                        <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
-                        Renewal List
-                        </a>
-                 </p></h4>
-                  <div  class="collapse" id="renewalList">
-                     <table class="table">
-                        <thead>
-                           <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Ref no</th>
-                              <th scope="col">Client</th>
-                              <th scope="col">Product</th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <th scope="row">1</th>
-                              <td>APL-1545</td>
-                              <td>Otto</td>
-                              <td>Auto</td>
-                           </tr>
-                           <tr>
-                              <th scope="row">2</th>
-                              <td>APL-0545</td>
-                              <td>Thornton</td>
-                              <td>Property</td>
-                           </tr>
-                           <tr>
-                              <th scope="row">3</th>
-                              <td>APL-1245</td>
-                              <td>the Bird</td>
-                              <td>Auto</td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </div>
-               </div>
-            </div>
-            <div class="separator"></div>
-         </div>
-         <!-- End demo content -->
-      </div>
-      <script>
-         // tell the embed parent frame the height of the content
-         
-         if (window.parent && window.parent.parent) {
-         
-           window.parent.parent.postMessage(["resultsFrame", {
-         
-             height: document.body.getBoundingClientRect().height,
-         
-             slug: "ko18ravd"
-         
-           }], "*")
+    <!-- TODO: Missing CoffeeScript 2 -->
+    <script type="text/javascript">
+      //<![CDATA[
+      window.onload = function() {
+        $(function() {
+          // Sidebar toggle behavior
+
+          $("#sidebarCollapse").on("click", function() {
+            $("#sidebar, #content").toggleClass("active");
+          });
+        });
+
+        var options = {
+          chart: {
+            height: 270,
+            type: "bar"
+          },
+          plotOptions: {
+            bar: {
+              horizontal: true,
+              dataLabels: {
+                position: "top"
+              }
+            }
+          },
+          dataLabels: {
+            enabled: true,
+            offsetX: -6,
+            style: {
+              fontSize: "12px",
+              colors: ["#fff"]
+            }
+          },
+          stroke: {
+            show: true,
+            width: 1,
+            colors: ["#fff"]
+          },
+          series: [
+            {
+              name: "Property",
+              data: [44, 55, 41, 20, 22]
+            },
+            {
+              name: "Auto",
+              data: [53, 32, 33, 52, 13]
+            }
+          ],
+
+          xaxis: {
+            categories: [
+              "Alberta",
+              "Manitoba",
+              "Newfoundland",
+              "Ontario",
+              "Quebec"
+            ]
           }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+        chart.render();
+
+// Pending chart
+var options = {
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    dataLabels: {
+                        name: {
+                            fontSize: '22px',
+                        },
+                        value: {
+                            fontSize: '16px',
+                        },
+                        total: {
+                            show: true,
+                            label: 'Total',
+                            formatter: function (w) {
+                                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                                return 3
+                            }
+                        }
+                    }
+                }
+            },
+            series: [2, 1],
+            labels: ['Policy Inquiry', 'Renewal Rewrite'],            
+        }
+       var chart = new ApexCharts(
+            document.querySelector("#pendingApprovalList"),
+            options
+        );
+        chart.render();
+
+
+        //dout chart
+
+        var optionsd = {
+          chart: {
+            type: "donut"
+          },
+
+          labels: ["Alberta", "Manitoba", "Newfoundland", "Ontario", "Quebec"],
+          series: [44, 17, 41, 55, 15],
+          responsive: [
+            {
+              breakpoint: 480,
+              options: {
+                chart: {
+                  width: 270
+                },
+                legend: {
+                  position: "bottom"
+                }
+              }
+            }
+          ]
+        };
+
+        var chart = new ApexCharts(
+          document.querySelector("#doutchart"),
+          optionsd
+        );
+
+        chart.render();
+
+//Rolling chart
+var options1 = {
+      chart: {
+        type: 'line',
+        width: 100,
+        height: 35,
+        sparkline: {
+          enabled: true
+        }
+      },
+      series: [{
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+      }],
+      tooltip: {
+        fixed: {
+          enabled: false
+        },
+        x: {
+          show: false
+        },
+        y: {
+          title: {
+            formatter: function (seriesName) {
+              return ''
+            }
+          }
+        },
+        marker: {
+          show: false
+        }
+      }
+    }
+
+    var options2 = {
+      chart: {
+        type: 'line',
+        width: 100,
+        height: 35,
+        sparkline: {
+          enabled: true
+        }
+      },
+      series: [{
+        data: [12, 14, 2, 47, 42, 15, 47, 75, 65, 19, 14]
+      }],
+      tooltip: {
+        fixed: {
+          enabled: false
+        },
+        x: {
+          show: false
+        },
+        y: {
+          title: {
+            formatter: function (seriesName) {
+              return ''
+            }
+          }
+        },
+        marker: {
+          show: false
+        }
+      }
+    }
+
+    var options3 = {
+      chart: {
+        type: 'line',
+        width: 100,
+        height: 35,
+        sparkline: {
+          enabled: true
+        }
+      },
+      series: [{
+        data: [47, 45, 74, 14, 56, 74, 14, 11, 7, 39, 82]
+      }],
+      tooltip: {
+        fixed: {
+          enabled: false
+        },
+        x: {
+          show: false
+        },
+        y: {
+          title: {
+            formatter: function (seriesName) {
+              return ''
+            }
+          }
+        },
+        marker: {
+          show: false
+        }
+      }
+    }
+
+    var options4 = {
+      chart: {
+        type: 'line',
+        width: 100,
+        height: 35,
+        sparkline: {
+          enabled: true
+        }
+      },
+      series: [{
+        data: [15, 75, 47, 65, 14, 2, 41, 54, 4, 27, 15]
+      }],
+      tooltip: {
+        fixed: {
+          enabled: false
+        },
+        x: {
+          show: false
+        },
+        y: {
+          title: {
+            formatter: function (seriesName) {
+              return ''
+            }
+          }
+        },
+        marker: {
+          show: false
+        }
+      }
+    }
+
+    var options5 = {
+      chart: {
+        type: 'bar',
+        width: 100,
+        height: 35,
+        sparkline: {
+          enabled: true
+        }
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '80%'
+        }
+      },
+      series: [{
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+      }],
+      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      xaxis: {
+        crosshairs: {
+          width: 1
+        },
+      },
+      tooltip: {
+        fixed: {
+          enabled: false
+        },
+        x: {
+          show: false
+        },
+        y: {
+          title: {
+            formatter: function (seriesName) {
+              return ''
+            }
+          }
+        },
+        marker: {
+          show: false
+        }
+      }
+    }
+
+    var options6 = {
+      chart: {
+        type: 'bar',
+        width: 100,
+        height: 35,
+        sparkline: {
+          enabled: true
+        }
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '80%'
+        }
+      },
+      series: [{
+        data: [12, 14, 2, 47, 42, 15, 47, 75, 65, 19, 14]
+      }],
+      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      xaxis: {
+        crosshairs: {
+          width: 1
+        },
+      },
+      tooltip: {
+        fixed: {
+          enabled: false
+        },
+        x: {
+          show: false
+        },
+        y: {
+          title: {
+            formatter: function (seriesName) {
+              return ''
+            }
+          }
+        },
+        marker: {
+          show: false
+        }
+      }
+    }
+
+    var options7 = {
+      chart: {
+        type: 'bar',
+        width: 100,
+        height: 35,
+        sparkline: {
+          enabled: true
+        }
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '80%'
+        }
+      },
+      series: [{
+        data: [47, 45, 74, 14, 56, 74, 14, 11, 7, 39, 82]
+      }],
+      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      xaxis: {
+        crosshairs: {
+          width: 1
+        },
+      },
+      tooltip: {
+        fixed: {
+          enabled: false
+        },
+        x: {
+          show: false
+        },
+        y: {
+          title: {
+            formatter: function (seriesName) {
+              return ''
+            }
+          }
+        },
+        marker: {
+          show: false
+        }
+      }
+    }
+
+    var options8 = {
+      chart: {
+        type: 'bar',
+        width: 100,
+        height: 35,
+        sparkline: {
+          enabled: true
+        }
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '80%'
+        }
+      },
+      series: [{
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+      }],
+      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      xaxis: {
+        crosshairs: {
+          width: 1
+        },
+      },
+      tooltip: {
+        fixed: {
+          enabled: false
+        },
+        x: {
+          show: false
+        },
+        y: {
+          title: {
+            formatter: function (seriesName) {
+              return ''
+            }
+          }
+        },
+        marker: {
+          show: false
+        }
+      }
+    }
+
+    new ApexCharts(document.querySelector("#chart1"), options1).render();
+    new ApexCharts(document.querySelector("#chart2"), options2).render();
+    new ApexCharts(document.querySelector("#chart3"), options3).render();
+    new ApexCharts(document.querySelector("#chart4"), options4).render();
+    new ApexCharts(document.querySelector("#chart5"), options5).render();
+    new ApexCharts(document.querySelector("#chart6"), options6).render();
+    new ApexCharts(document.querySelector("#chart7"), options7).render();
+    new ApexCharts(document.querySelector("#chart8"), options8).render();
+
+
+
+    //Stacked bar
+    var options = {
+            chart: {
+                height: 350,
+                type: 'bar',
+                stacked: true,
+                stackType: '100%'
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: true,
+                },
+                
+            },
+            stroke: {
+                width: 1,
+                colors: ['#fff']
+            },
+            series: [{
+                name: 'Successful',
+                data: [44, 55, 41, 37, 22, 43, 21]
+            },{
+                name: 'WIP',
+                data: [53, 32, 33, 52, 13, 43, 32]
+            },{
+                name: 'Pending Approval',
+                data: [12, 17, 11, 9, 15, 11, 20]
+            }],
+            title: {
+                text: ''
+            },
+            xaxis: {
+                categories: ['Branch 1','Branch 1','Branch 1','Branch 1','Branch 1'],
+            },
+          
+            tooltip: {
+                    y: {
+                        formatter: function(val) {
+                        return val + "K"
+                    }
+                }
+            },
+            fill: {
+                opacity: 1
+                
+            },
+            
+            legend: {
+                position: 'top',
+                horizontalAlign: 'left',
+                offsetX: 40
+            }
+        }
+       var chart = new ApexCharts(
+            document.querySelector("#chartStacked"),
+            options
+        );
+         chart.render();
+
+
+      };
+
+      //]]>
+    </script>
+  </head>
+  <body>
+    <div class="row">
+      <!-- Vertical navbar -->
+      <div class="vertical-nav bg-white" id="sidebar">
+        <div class="py-4 px-3 mb-4 bg-light">
+          <div class="media d-flex align-items-center">
+            <img
+              src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png"
+              alt="..."
+              width="65"
+              class="mr-3 rounded-circle img-thumbnail shadow-sm"
+            />
+            <div class="media-body">
+              <h4 class="m-0">Broker Admin</h4>
+              <p class="font-weight-light text-muted mb-0">Central-Division</p>
+            </div>
+          </div>
+        </div>
+        <p
+          class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"
+        >
+          Main
+        </p>
+        <ul class="nav flex-column bg-white mb-0">
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic bg-light">
+              <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+              Policy
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa  fa-credit-card mr-3 text-primary fa-fw"></i>
+              Claims
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+              Documents
+            </a>
+          </li>
+        </ul>
+        <p
+          class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0"
+        >
+          More..
+        </p>
+        <ul class="nav flex-column bg-white mb-0">
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i
+                class="fa  fa-suitcase                  mr-3 text-primary fa-fw"
+              ></i>
+              Portfolio transfer
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-user mr-3 text-primary fa-fw"></i>
+              Sanction broker user
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-search mr-3 text-primary fa-fw"></i>
+              Customer Search
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i
+                class="fa  fa-asterisk                  mr-3 text-primary fa-fw"
+              ></i>
+              Preferences
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End vertical navbar -->
+      <!-- Page content holder -->
+      <div class="page-content p-5" id="content">
+        <!-- Toggle button -->
+        <button
+          id="sidebarCollapse"
+          type="button"
+          class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"
+        >
+          <i class="fa fa-bars mr-2"></i
+          ><small class="text-uppercase font-weight-bold">Toggle</small>
+        </button>
+        <!-- Demo content -->
+        <h2 class="display-4 text-white">Broker portal</h2>
+        <p class="lead text-white mb-0">
+          <span class="text-light font-italic bold"> <h2>Quick stats</h2></span>
+        </p>
+        <div class="separator"></div>
+        <div class="row">
+          <div class="col-xs-12 col-md-2">
+            <div class="card cardpolicy" style="width: 12rem;">
+              <div class="card-body">
+                <h5 class="card-title">Clients</h5>
+                <div class="smallseparator"></div>
+                <p class="card-text colorwhite">2</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-md-2">
+            <div class="card cardpolicy" style="width: 12rem;">
+              <div class="card-body">
+                <h5 class="card-title">Policies</h5>
+                <div class="smallseparator"></div>
+                <p class="card-text colorwhite">7</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-md-2">
+            <div class="card cardpolicy" style="width: 12rem;">
+              <div class="card-body">
+                <h5 class="card-title">Sales</h5>
+                <div class="smallseparator"></div>
+                <p class="card-text colorwhite">2</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-2">
+            <div class="card cardpolicy" style="width: 12rem;">
+              <div class="card-body">
+                <h5 class="card-title">Conversion</h5>
+                <div class="smallseparator"></div>
+                <p class="card-text colorwhite">1</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-2">
+            <div class="card cardpolicy" style="width: 13rem;">
+              <div class="card-body">
+                <h5 class="card-title">Policy Reinstatement</h5>
+                <div class="smallseparator"></div>
+                <p class="card-text colorwhite">2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="separator"></div>
+        <div class="row">
+          <div class="col-xs-12 col-md-8">
+            <p class="lead text-white mb-2">
+              <span class="text-light font-italic bold">
+                <h2>Quote – NB count monthly</h2></span
+              >
+            </p>
+          </div>
+          <div class="col-xs-6 col-md-4">
+            <p class="lead text-white mb-2">
+              <span class="text-light font-italic bold">
+                <h2>Rolling Commission</h2></span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-7">
+            <div id="chart" style="background: white"></div>
+          </div>
+          <div class="col-xs-6 col-md-5">
+          <!--  <div id="doutchart" style="background: white"></div> -->
+
+          <div class="row">
+            <table>
+              <thead>
+                <th>Total Value</th>
+                <th>Percentage of Portfolio</th>
+                <th>Last 10 days</th>
+                <th>Volume</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>$32,554</td>
+                  <td>15%</td>
+                  <td>
+                    <div id="chart1"></div>
+                  </td>
+                  <td>
+                    <div id="chart5"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>$23,533</td>
+                  <td>7%</td>
+                  <td>
+                    <div id="chart2"></div>
+                  </td>
+                  <td>
+                    <div id="chart6"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>$54,276</td>
+                  <td>9%</td>
+                  <td>
+                    <div id="chart3"></div>
+                  </td>
+                  <td>
+                    <div id="chart7"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>$11,533</td>
+                  <td>2%</td>
+                  <td>
+                    <div id="chart4"></div>
+                  </td>
+                  <td>
+                    <div id="chart8"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        
+          </div>
+
+          </div>
          
-         // always overwrite window.name, in case users try to set it manually
-         window.name = "result"
-            </script>
-      <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
-   </body>
+        </div>
+        <div class="separator"></div>
+
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+               <h4>
+              <p
+                class="lead text-black mb-0"
+                data-toggle="collapse"
+                href="#multiCollapseExample1"
+                aria-expanded="false"
+                aria-controls="multiCollapseExample1" >
+                <a class="text-black font-italic bold">
+                  <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
+                  Pending Underwriting Approval
+                </a>
+              </p>
+            </h4>
+
+            <div id="pendingApprovalList">
+
+            </div>
+
+            <div class="collapse" id="multiCollapseExample1">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Request#</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Recipient</th>
+                    <th scope="col">Policy No.</th>
+                    <th scope="col">Transaction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Sep 10,2015</th>
+                    <td>Open</td>
+                    <td>7026</td>
+                    <td>Eligibility</td>
+                    <th>Ont service</th>
+                    <td>test114455</td>
+                    <td>Policy Inquiry</td>
+                  </tr>
+                  <tr>
+                    <th>Oct 12,2015</th>
+                    <td>Open</td>
+                    <td>6565</td>
+                    <td>Eligibility</td>
+                    <th>Underwriter1</th>
+                    <td>test11412</td>
+                    <td>Policy Inquiry</td>
+                  </tr>
+                  <tr>
+                    <th>Mar 10,2015</th>
+                    <td>Open</td>
+                    <td>5454</td>
+                    <td>Eligibility</td>
+                    <th>Ont service</th>
+                    <td>test11445555</td>
+                    <td>Renewal Rewrite</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="left-panel-list">
+              <div>
+                <span class="arrow"></span>
+              </div>
+            </div>
+            <h4>
+              <p
+                class="lead text-black mb-0"
+                data-toggle="collapse"
+                href="#renewalList"
+                aria-expanded="false"
+                aria-controls="renewalList"
+              >
+                <a class="text-black font-italic bold">
+                  <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
+                  Renewal List
+                </a>
+              </p>
+            </h4>
+            <div class="" id="renewalList">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ref no</th>
+                    <th scope="col">Client</th>
+                    <th scope="col">Product</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>APL-1545</td>
+                    <td>Otto</td>
+                    <td>Auto</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>APL-0545</td>
+                    <td>Thornton</td>
+                    <td>Property</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>APL-1245</td>
+                    <td>the Bird</td>
+                    <td>Auto</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="separator"></div>
+
+        <div class="row">
+         <div class="col-xs-12 col-md-6">
+              <h4>
+             <p
+               class="lead text-black mb-0"
+               data-toggle="collapse"
+               href="#"
+               aria-expanded="false"
+               aria-controls="" >
+               <a class="text-black font-italic bold">
+                 <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
+                 BMS list
+               </a>
+             </p>
+           </h4>
+           <div id="chartStacked">
+
+         </div>
+</div>
+
+      </div>
+      <!-- End demo content -->
+    </div>
+    <script>
+      // tell the embed parent frame the height of the content
+
+      if (window.parent && window.parent.parent) {
+        window.parent.parent.postMessage(
+          [
+            "resultsFrame",
+            {
+              height: document.body.getBoundingClientRect().height,
+
+              slug: "ko18ravd"
+            }
+          ],
+          "*"
+        );
+      }
+
+      // always overwrite window.name, in case users try to set it manually
+      window.name = "result";
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+  </body>
 </html>
