@@ -75,11 +75,69 @@
         *
         */
 
+        .sparkboxes .box1 {
+    background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+}
+
+        .display-4{
+          font-size:2.0rem !important;;
+          font-weight: 300;
+        line-height: 1.2;
+        }
     
+        .p-5 {
+    padding: 1.5rem!important;
+}
+
     .col-md-4 {
       width: 33.33%;
       padding: 0 25px;
     }
+
+    .dropzone.dz-clickable {
+    cursor: pointer;
+}
+
+.dropzone {
+    border: 2px dashed #0087F7;
+    border-radius: 5px;
+    background: white;
+}
+.dropzone {
+    min-height: 150px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: white;
+    padding: 54px 54px;
+}
+
+
+.dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
+    cursor: pointer;
+}
+
+.dropzone .dz-message {
+    font-weight: 400;
+}
+.dropzone .dz-message {
+    text-align: center;
+    margin: 2em 0;
+}
+.dropzone.dz-clickable * {
+    cursor: default;
+}
+.dropzone, .dropzone * {
+    box-sizing: border-box;
+}
+
+    .text-white {
+
+    color: #fff!important;
+}
+
+.text-black {
+      
+      color: black !important;
+  }
 
     table {
       width: 100%;
@@ -96,9 +154,9 @@
       padding-bottom: 20px;
     }
     td, th {
-      width: 25%;
+    
       text-align: center;
-      height: 65px;
+      height: 25px;
     }
 
     td div {
@@ -147,9 +205,28 @@
         margin-right: -10px;
         margin-left: -10px;
       }
-      .cardpolicy {
-        background: #f8f9fa;
+     
+
+      .cardbox1{
+        background: #F8F9FA;
       }
+
+      .cardbox2{
+        background: #F8F9FA;
+      }
+
+      .cardbox3{
+        background: #F8F9FA;
+      }
+
+      .cardbox4{
+        background: #F8F9FA;
+      }
+
+      .cardbox5{
+        background: #F8F9FA;
+      }
+
       .colorwhite {
         color: black;
       }
@@ -221,20 +298,27 @@
         *
         */
       body {
-        background: #599fd9;
-        background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
-        background: linear-gradient(to right, #599fd9, #c2e59c);
-        min-height: 100vh;
-        overflow-x: hidden;
+       
+    background: linear-gradient(to right, #599fd9, white);
+    min-height: 100vh;
+    overflow-x: hidden;
       }
       .separator {
-        margin: 2rem 0;
-        border-bottom: 1px dashed #fff;
-      }
-      .smallseparator {
         margin: 1rem 0;
         border-bottom: 1px dashed #fff;
       }
+      .smallseparator {
+    margin: 0.4rem 0;
+    color: grey;
+    border-bottom: 1px dashed grey;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem  !important;
+}
+
       .text-uppercase {
         letter-spacing: 0.1em;
       }
@@ -259,7 +343,7 @@
 
         var options = {
           chart: {
-            height: 270,
+            height: 250,
             type: "bar"
           },
           plotOptions: {
@@ -312,7 +396,7 @@
 // Pending chart
 var options = {
             chart: {
-                height: 350,
+                height: 280,
                 type: 'radialBar',
             },
             plotOptions: {
@@ -329,14 +413,14 @@ var options = {
                             label: 'Total',
                             formatter: function (w) {
                                 // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                                return 3
+                                return 9
                             }
                         }
                     }
                 }
             },
-            series: [2, 1],
-            labels: ['Policy Inquiry', 'Renewal Rewrite'],            
+            series: [22, 10,25,20,20],
+            labels: ['Policy Inquiry', 'Renewal Rewrite','Renewal Pending','Policy upgrade request','Policy Suspended'],            
         }
        var chart = new ApexCharts(
             document.querySelector("#pendingApprovalList"),
@@ -349,18 +433,17 @@ var options = {
 
         var optionsd = {
           chart: {
-            type: "donut"
+            type: "donut",
+            height: 290,
           },
 
           labels: ["Alberta", "Manitoba", "Newfoundland", "Ontario", "Quebec"],
           series: [44, 17, 41, 55, 15],
           responsive: [
             {
-              breakpoint: 480,
+              breakpoint: 300,
               options: {
-                chart: {
-                  width: 270
-                },
+            
                 legend: {
                   position: "bottom"
                 }
@@ -741,14 +824,92 @@ var options1 = {
                 offsetX: 40
             }
         }
-       var chart = new ApexCharts(
+
+
+        var chart = new ApexCharts(
             document.querySelector("#chartStacked"),
             options
         );
          chart.render();
 
+      //////////////////////////////chartScantionBroker/////////////////////
+
+  
+
+
+         var options = {
+            chart: {
+                height: 350,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    offsetY: -10,
+                    startAngle: 0,
+                    endAngle: 270,
+                    hollow: {
+                        margin: 5,
+                        size: '30%',
+                        background: 'transparent',
+                        image: undefined,
+                    },
+                    dataLabels: {
+                        name: {
+                            show: false,
+                            
+                        },
+                        value: {
+                            show: false,
+                        }
+                    }
+                }
+            },
+            colors: ['#1ab7ea', '#0084ff', '#39539E', '#0077B5'],
+            series: [76,67,61,90],
+            labels: ['Added Broker User', 'Deleted Broker User', 'New Broker User Request Pendings', 'New Broker User Request Approved'],
+            legend: {
+                show: true,
+                floating: true,
+                fontSize: '16px',
+                position: 'left',
+                offsetX: 160,
+                offsetY: 10,
+                labels: {
+                    useSeriesColors: true,
+                },
+                markers: {
+                    size: 0
+                },
+                formatter: function(seriesName, opts) {
+                    return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
+                },
+                itemMargin: {
+                    horizontal: 1,
+                }
+            },
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    legend: {
+                        show: false
+                    }
+                }
+            }]
+        }
+
+       var chart = new ApexCharts(
+            document.querySelector("#chartScantionBroker"),
+            options
+        );
+        
+        chart.render();
 
       };
+
+
+
+
+
 
       //]]>
     </script>
@@ -857,14 +1018,13 @@ var options1 = {
           ><small class="text-uppercase font-weight-bold">Toggle</small>
         </button>
         <!-- Demo content -->
-        <h2 class="display-4 text-white">Broker portal</h2>
-        <p class="lead text-white mb-0">
-          <span class="text-light font-italic bold"> <h2>Quick stats</h2></span>
-        </p>
+        <h2 class="display-4 text-black">Broker portal</h2>
+        <h3 class="display-4 text-black">Quick stats</h3>
+     
         <div class="separator"></div>
         <div class="row">
           <div class="col-xs-12 col-md-2">
-            <div class="card cardpolicy" style="width: 12rem;">
+            <div class="card cardbox1" style="width: 12rem;">
               <div class="card-body">
                 <h5 class="card-title">Clients</h5>
                 <div class="smallseparator"></div>
@@ -874,7 +1034,7 @@ var options1 = {
           </div>
 
           <div class="col-xs-12 col-md-2">
-            <div class="card cardpolicy" style="width: 12rem;">
+            <div class="card cardbox2" style="width: 12rem;">
               <div class="card-body">
                 <h5 class="card-title">Policies</h5>
                 <div class="smallseparator"></div>
@@ -884,7 +1044,7 @@ var options1 = {
           </div>
 
           <div class="col-xs-12 col-md-2">
-            <div class="card cardpolicy" style="width: 12rem;">
+            <div class="card cardbox3" style="width: 12rem;">
               <div class="card-body">
                 <h5 class="card-title">Sales</h5>
                 <div class="smallseparator"></div>
@@ -893,7 +1053,7 @@ var options1 = {
             </div>
           </div>
           <div class="col-xs-12 col-md-2">
-            <div class="card cardpolicy" style="width: 12rem;">
+            <div class="card cardbox4" style="width: 12rem;">
               <div class="card-body">
                 <h5 class="card-title">Conversion</h5>
                 <div class="smallseparator"></div>
@@ -902,7 +1062,7 @@ var options1 = {
             </div>
           </div>
           <div class="col-xs-12 col-md-2">
-            <div class="card cardpolicy" style="width: 13rem;">
+            <div class="card cardbox5" style="width: 13rem;">
               <div class="card-body">
                 <h5 class="card-title">Policy Reinstatement</h5>
                 <div class="smallseparator"></div>
@@ -913,81 +1073,20 @@ var options1 = {
         </div>
         <div class="separator"></div>
         <div class="row">
-          <div class="col-xs-12 col-md-8">
-            <p class="lead text-white mb-2">
-              <span class="text-light font-italic bold">
-                <h2>Quote – NB count monthly</h2></span
-              >
-            </p>
+          <div class="col-xs-12 col-md-6">
+              <h2 class="display-4 text-black">Quote – NB count monthly</h2>
           </div>
           <div class="col-xs-6 col-md-4">
-            <p class="lead text-white mb-2">
-              <span class="text-light font-italic bold">
-                <h2>Rolling Commission</h2></span
-              >
-            </p>
+              <h2 class="display-4 text-black">Rolling Commission</h2>
+       
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-12 col-md-7">
+          <div class="col-xs-12 col-md-6">
             <div id="chart" style="background: white"></div>
           </div>
-          <div class="col-xs-6 col-md-5">
-          <!--  <div id="doutchart" style="background: white"></div> -->
-
-          <div class="row">
-            <table>
-              <thead>
-                <th>Total Value</th>
-                <th>Percentage of Portfolio</th>
-                <th>Last 10 days</th>
-                <th>Volume</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>$32,554</td>
-                  <td>15%</td>
-                  <td>
-                    <div id="chart1"></div>
-                  </td>
-                  <td>
-                    <div id="chart5"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>$23,533</td>
-                  <td>7%</td>
-                  <td>
-                    <div id="chart2"></div>
-                  </td>
-                  <td>
-                    <div id="chart6"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>$54,276</td>
-                  <td>9%</td>
-                  <td>
-                    <div id="chart3"></div>
-                  </td>
-                  <td>
-                    <div id="chart7"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>$11,533</td>
-                  <td>2%</td>
-                  <td>
-                    <div id="chart4"></div>
-                  </td>
-                  <td>
-                    <div id="chart8"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-        
-          </div>
+          <div class="col-xs-6 col-md-6">
+           <div id="doutchart" style="background: white"></div> 
 
           </div>
          
@@ -995,20 +1094,15 @@ var options1 = {
         <div class="separator"></div>
 
         <div class="row">
-          <div class="col-xs-12 col-md-6">
-               <h4>
-              <p
-                class="lead text-black mb-0"
-                data-toggle="collapse"
-                href="#multiCollapseExample1"
-                aria-expanded="false"
-                aria-controls="multiCollapseExample1" >
-                <a class="text-black font-italic bold">
-                  <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
-                  Pending Underwriting Approval
-                </a>
-              </p>
-            </h4>
+          <div class="col-xs-12 col-md-12">
+
+            <div class="row">
+              <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
+                  <h2 data-toggle="collapse"
+                  href="#multiCollapseExample1"
+                  aria-expanded="false"
+                  aria-controls="multiCollapseExample1" class="display-4 text-black">Activity list</h2>
+                </div>
 
             <div id="pendingApprovalList">
 
@@ -1025,6 +1119,7 @@ var options1 = {
                     <th scope="col">Recipient</th>
                     <th scope="col">Policy No.</th>
                     <th scope="col">Transaction</th>
+                    <th scope="col">Company name & Branch number</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1036,6 +1131,7 @@ var options1 = {
                     <th>Ont service</th>
                     <td>test114455</td>
                     <td>Policy Inquiry</td>
+                    <td>test - 009 </td>
                   </tr>
                   <tr>
                     <th>Oct 12,2015</th>
@@ -1045,6 +1141,17 @@ var options1 = {
                     <th>Underwriter1</th>
                     <td>test11412</td>
                     <td>Policy Inquiry</td>
+                    <td>test - 009 </td>
+                  </tr>
+                  <tr>
+                    <th>Oct 12,2015</th>
+                    <td>Open</td>
+                    <td>7898</td>
+                    <td>Eligibility</td>
+                    <th>Underwriter1</th>
+                    <td>test11412</td>
+                    <td>Renewal Pending</td>
+                    <td>test - 009 </td>
                   </tr>
                   <tr>
                     <th>Mar 10,2015</th>
@@ -1054,88 +1161,107 @@ var options1 = {
                     <th>Ont service</th>
                     <td>test11445555</td>
                     <td>Renewal Rewrite</td>
+                    <td>test - 009 </td>
+                  </tr>
+                  <tr>
+                    <th>Oct 12,2019</th>
+                    <td>Open</td>
+                    <td>4200</td>
+                    <td>Eligibility</td>
+                    <th>Underwriter1</th>
+                    <td>test11412</td>
+                    <td>Policy Suspended</td>
+                    <td>test - 009</td>
+                  </tr>
+                  <tr>
+                    <th>Oct 12,2019</th>
+                    <td>Open</td>
+                    <td>4200</td>
+                    <td>Eligibility</td>
+                    <th>Underwriter1</th>
+                    <td>test11412</td>
+                    <td>Policy upgrade request</td>
+                    <td>test - 009</td>
+                  </tr>
+                  <tr>
+                    <th>Oct 12,2019</th>
+                    <td>Open</td>
+                    <td>4200</td>
+                    <td>Eligibility</td>
+                    <th>Underwriter1</th>
+                    <td>test11412</td>
+                    <td>Policy Suspended</td>
+                    <td>test - 009</td>
+                  </tr>
+                  <tr>
+                    <th>Oct 12,2019</th>
+                    <td>Open</td>
+                    <td>4200</td>
+                    <td>Eligibility</td>
+                    <th>Underwriter1</th>
+                    <td>test11412</td>
+                    <td>Policy upgrade request</td>
+                    <td>test - 009</td>
+                  </tr>
+                  <tr>
+                    <th>Oct 12,2015</th>
+                    <td>Open</td>
+                    <td>4200</td>
+                    <td>Eligibility</td>
+                    <th>Underwriter1</th>
+                    <td>test11412</td>
+                    <td>Renewal Pending</td>
+                    <td>test - 009</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <div class="col-xs-12 col-md-6">
-            <div class="left-panel-list">
-              <div>
-                <span class="arrow"></span>
-              </div>
-            </div>
-            <h4>
-              <p
-                class="lead text-black mb-0"
-                data-toggle="collapse"
-                href="#renewalList"
-                aria-expanded="false"
-                aria-controls="renewalList"
-              >
-                <a class="text-black font-italic bold">
-                  <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
-                  Renewal List
-                </a>
-              </p>
-            </h4>
-            <div class="" id="renewalList">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Ref no</th>
-                    <th scope="col">Client</th>
-                    <th scope="col">Product</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>APL-1545</td>
-                    <td>Otto</td>
-                    <td>Auto</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>APL-0545</td>
-                    <td>Thornton</td>
-                    <td>Property</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>APL-1245</td>
-                    <td>the Bird</td>
-                    <td>Auto</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+ 
         </div>
         <div class="separator"></div>
-
         <div class="row">
-         <div class="col-xs-12 col-md-6">
-              <h4>
-             <p
-               class="lead text-black mb-0"
-               data-toggle="collapse"
-               href="#"
-               aria-expanded="false"
-               aria-controls="" >
-               <a class="text-black font-italic bold">
-                 <i class="fa fa-compress mr-3 text-primary fa-fw"></i>
-                 BMS list
-               </a>
-             </p>
-           </h4>
-           <div id="chartStacked">
-
+         <div class="col-xs-12 col-md-7">
+                  <h2 data-toggle="collapse"
+                  href="#"
+                  aria-expanded="false"
+                  aria-controls="" class="display-4 text-black"> BMS list</h2>
+              <div id="chartStacked">
          </div>
-</div>
+        </div>
+        <div class="col-xs-12 col-md-5">
+           
+
+            <h2 data-toggle="collapse"
+            href="#"
+            aria-expanded="false"
+            aria-controls="" class="display-4 text-black">BMS Upload</h2>
+            <div class="card" style="">
+                <div class="card-body">
+                
+                  <form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload">
+                    <div class="dz-message needsclick">
+                      Drop files here or click to upload.<br>
+                    </div>
+              </form>
+                </div>
+              </div>
+
+        </div>
 
       </div>
+
+      <div class="separator"></div>
+      <div class="row">
+       <div class="col-xs-12 col-md-12">
+                <h2 data-toggle="collapse"
+                href="#"
+                aria-expanded="false"
+                aria-controls="" class="display-4 text-black">Scantioning Broker User</h2>
+            <div id="chartScantionBroker">
+       </div>
+      </div>
+    </div>
       <!-- End demo content -->
     </div>
     <script>
