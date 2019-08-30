@@ -957,7 +957,7 @@ var options1 = {
         </p>
         <ul class="nav flex-column bg-white mb-0">
           <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic bg-light">
+            <a href="./index.html" class="nav-link text-dark font-italic bg-light">
               <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
               Dashboard
             </a>
@@ -981,6 +981,12 @@ var options1 = {
             <a href="#" class="nav-link text-dark font-italic">
               <i class="fa fa-search mr-3 text-primary fa-fw"></i>
               Customer Search
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./BMSList.html" class="nav-link text-dark font-italic">
+              <i class="fa fa-search mr-3 text-primary fa-fw"></i>
+              BMS Error list
             </a>
           </li>
           <li class="nav-item">
@@ -1115,110 +1121,167 @@ var options1 = {
             <div id="pendingApprovalList">
             </div>
             <div class="collapse" id="multiCollapseExample1">
-              <table class="table">
-                <thead>
+              <table class="table">                    
+                  <thead>  
+                      <tr>
+                          <th colspan="8" scope="col">                            
+                           <h4  style="color: green"> UW Approval List </h4>
+                          </th>
+                      </tr>
+                    </thead>
+                <thead>  
+                                
                   <tr>
                     <th scope="col">Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Request#</th>
-                    <th scope="col">Reason</th>
-                    <th scope="col">Recipient</th>
-                    <th scope="col">Policy No.</th>
-                    <th scope="col">Transaction</th>
                     <th scope="col">Company name & Branch number</th>
+                    <th scope="col">Policy Number</th>
+                    <th scope="col">Reference #</th>
+                    <th scope="col">UW Reason</th>
+                    <th scope="col">UW Agent</th>
+                    <th scope="col">Policy Transaction</th>
+                    <th scope="col">Status</th>                 
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th>Sep 10,2015</th>
-                    <td>Open</td>
-                    <td>7026</td>
-                    <td>Eligibility</td>
-                    <th>Ont service</th>
-                    <td>test114455</td>
+                    <th>Aug 10,2019</th>
+                    <td>AA-Toronto</td>
+                    <td>p-702126</td>
+                    <td></td>
+                    <th>Eligibility Review</th>
+                    <td>Ontario -services</td>
                     <td>Policy Inquiry</td>
-                    <td>test - 009 </td>
+                    <td>Open</td>
                   </tr>
                   <tr>
-                    <th>Oct 12,2015</th>
-                    <td>Open</td>
-                    <td>6565</td>
-                    <td>Eligibility</td>
-                    <th>Underwriter1</th>
-                    <td>test11412</td>
-                    <td>Policy Inquiry</td>
-                    <td>test - 009 </td>
-                  </tr>
+                      <th>Aug 20,2019</th>
+                      <td>AA-Toronto</td>
+                      <td>p-704426</td>
+                      <td></td>
+                      <th>UW Referral</th>
+                      <td>Ontario -services</td>
+                      <td>New Business</td>
+                      <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>Jul 12,2019</th>
+                        <td>AA-Toronto</td>
+                        <td>p-712026</td>
+                        <td></td>
+                        <th>Eligibility Review</th>
+                        <td>Ontario -services</td>
+                        <td>New Business</td>
+                        <td>Open</td>
+                      </tr>
+      
+                </tbody>
+
+                <thead>  
+                    <tr >
+                        <th colspan="8" scope="col">
+                          
+                         <h4  style="color: orange"> Renewal List</h4></th>
+                        </tr>
+                        </thead>
+
+                <thead>
                   <tr>
-                    <th>Oct 12,2015</th>
-                    <td>Open</td>
-                    <td>7898</td>
-                    <td>Eligibility</td>
-                    <th>Underwriter1</th>
-                    <td>test11412</td>
-                    <td>Renewal Pending</td>
-                    <td>test - 009 </td>
+                    <th scope="col">Date</th>
+                    <th scope="col">Company name & Branch number</th>
+                    <th scope="col">Policy Number</th>
+                    <th scope="col">Reference #</th>
+                    <th scope="col">UW Reason</th>
+                    <th scope="col">UW Agent</th>
+                    <th scope="col">Policy Transaction</th>
+                    <th scope="col">Status</th>                 
                   </tr>
+                </thead>
+                <tbody>
                   <tr>
-                    <th>Mar 10,2015</th>
-                    <td>Open</td>
-                    <td>5454</td>
-                    <td>Eligibility</td>
-                    <th>Ont service</th>
-                    <td>test11445555</td>
+                    <th>Aug 10,2019</th>
+                    <td>AA-Toronto</td>
+                    <td>p-702126</td>
+                    <td></td>
+                    <th>Eligibility Review</th>
+                    <td>Ontario -services</td>
                     <td>Renewal Rewrite</td>
-                    <td>test - 009 </td>
+                    <td>Suspended</td>
                   </tr>
                   <tr>
-                    <th>Oct 12,2019</th>
-                    <td>Open</td>
-                    <td>4200</td>
-                    <td>Eligibility</td>
-                    <th>Underwriter1</th>
-                    <td>test11412</td>
-                    <td>Policy Suspended</td>
-                    <td>test - 009</td>
+                      <th>Aug 20,2019</th>
+                      <td>AA-Toronto</td>
+                      <td>p-704426</td>
+                      <td></td>
+                      <th>Eligibility Review</th>
+                      <td>Ontario -services</td>
+                      <td>Renewal Rewrite</td>
+                      <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>Jul 12,2019</th>
+                        <td>AA-Toronto</td>
+                        <td>p-712026</td>
+                        <td></td>
+                        <th>Eligibility Review</th>
+                        <td>Ontario -services</td>
+                        <td>Renewal Rewrite</td>
+                        <td>Closed</td>
+                      </tr>
+      
+                </tbody>
+
+                <thead>  
+                    <tr >
+                        <th colspan="8" scope="col">
+                          
+                         <h4  style="color: red"> Pending Cancellation List</h4></th>
+                        </tr>
+                        </thead>
+
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Company name & Branch number</th>
+                    <th scope="col">Policy Number</th>
+                    <th scope="col">Reference #</th>
+                    <th scope="col">UW Reason</th>
+                    <th scope="col">UW Agent</th>
+                    <th scope="col">Policy Transaction</th>
+                    <th scope="col">Status</th>                 
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Aug 10,2019</th>
+                    <td>AA-Toronto</td>
+                    <td>p-702126</td>
+                    <td></td>
+                    <th>Review</th>
+                    <td>Ontario -services</td>
+                    <td>Renewal Rewrite</td>
+                    <td>Suspended</td>
                   </tr>
                   <tr>
-                    <th>Oct 12,2019</th>
-                    <td>Open</td>
-                    <td>4200</td>
-                    <td>Eligibility</td>
-                    <th>Underwriter1</th>
-                    <td>test11412</td>
-                    <td>Policy upgrade request</td>
-                    <td>test - 009</td>
-                  </tr>
-                  <tr>
-                    <th>Oct 12,2019</th>
-                    <td>Open</td>
-                    <td>4200</td>
-                    <td>Eligibility</td>
-                    <th>Underwriter1</th>
-                    <td>test11412</td>
-                    <td>Policy Suspended</td>
-                    <td>test - 009</td>
-                  </tr>
-                  <tr>
-                    <th>Oct 12,2019</th>
-                    <td>Open</td>
-                    <td>4200</td>
-                    <td>Eligibility</td>
-                    <th>Underwriter1</th>
-                    <td>test11412</td>
-                    <td>Policy upgrade request</td>
-                    <td>test - 009</td>
-                  </tr>
-                  <tr>
-                    <th>Oct 12,2015</th>
-                    <td>Open</td>
-                    <td>4200</td>
-                    <td>Eligibility</td>
-                    <th>Underwriter1</th>
-                    <td>test11412</td>
-                    <td>Renewal Pending</td>
-                    <td>test - 009</td>
-                  </tr>
+                      <th>Aug 20,2019</th>
+                      <td>AA-Toronto</td>
+                      <td>p-704426</td>
+                      <td></td>
+                      <th>Review</th>
+                      <td>Ontario -services</td>
+                      <td>New Business</td>
+                      <td>Open</td>
+                    </tr>
+                    <tr>
+                        <th>Jul 12,2019</th>
+                        <td>AA-Toronto</td>
+                        <td>p-712026</td>
+                        <td></td>
+                        <th>Review</th>
+                        <td>Ontario -services</td>
+                        <td>Renewal Rewrite</td>
+                        <td>Closed</td>
+                      </tr>
+      
                 </tbody>
               </table>
             </div>
@@ -1233,6 +1296,13 @@ var options1 = {
                   aria-controls="" class="display-4 text-black">BMS list</h2>
               <div id="chartStacked">
          </div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            <button id="btnUpdate" type="button" class="btn btn-updatelight rounded-pill shadow-sm px-4 mb-4">
+                <a href="./BMSList.html">
+                  <small class="text-uppercase font-weight-bold">BMS Error list</small>
+                  </a>
+              </button>
         </div>
       </div>
       <div class="separator"></div>
