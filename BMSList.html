@@ -1,0 +1,501 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Broker portal demo</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style id="compiled-css" type="text/css">
+
+.btn-updatelight {
+    color: black;
+    background-color: #F8F9FA;
+    border-color: #f8f9fa;
+   margin-bottom: 0rem!important;
+}
+ 
+        .rowDashboard {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-left: -15px;
+}
+
+.sparkboxes .box1 {
+	background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+}
+
+.text-uppercase {
+    text-transform: uppercase!important;
+    color: black;
+}
+
+.display-4 {
+	font-size: 2.0rem !important;
+	font-weight: 300;
+	line-height: 1.2;
+}
+
+.p-5 {
+	padding: 1.5rem!important;
+}
+
+.col-md-4 {
+	width: 33.33%;
+	padding: 0 25px;
+}
+
+.dropzone.dz-clickable {
+	cursor: pointer;
+}
+
+.dropzone {
+	border: 2px dashed #0087F7;
+	border-radius: 5px;
+	background: white;
+}
+
+.dropzone {
+	min-height: 150px;
+	border: 2px solid rgba(0, 0, 0, 0.3);
+	background: white;
+	padding: 54px 54px;
+}
+
+.dropzone.dz-clickable .dz-message,
+.dropzone.dz-clickable .dz-message * {
+	cursor: pointer;
+}
+
+.dropzone .dz-message {
+	font-weight: 400;
+}
+
+.dropzone .dz-message {
+	text-align: center;
+	margin: 2em 0;
+}
+
+.dropzone.dz-clickable * {
+	cursor: default;
+}
+
+.dropzone,
+.dropzone * {
+	box-sizing: border-box;
+}
+
+.text-white {
+	color: #fff!important;
+}
+
+.text-black {
+	color: black !important;
+}
+
+table {
+	width: 100%;
+	background: white;
+}
+
+tbody tr {
+	border-top: 1px solid #e7e7e7;
+}
+
+th {
+	font-weight: bold;
+	font-family: Helvetica;
+	padding-bottom: 20px;
+}
+
+td,
+th {
+	text-align: center;
+	height: 25px;
+}
+
+td div {
+	margin: 0 auto;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+@media only screen and (max-width: 480px) {
+	th:first-child,
+	td:first-child {
+		display: none;
+	}
+	.row {
+		display: block;
+	}
+	.col-md-4 {
+		padding: 0;
+		width: 100%;
+	}
+}
+
+.h5,
+h5 {
+	font-size: 1rem;
+}
+
+.table {
+	width: 100%;
+	margin-bottom: 1rem;
+	color: #212529;
+	font-size: 12px;
+}
+
+.dh {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -10px;
+	margin-left: -10px;
+}
+
+.cardbox1 {
+	background: #F8F9FA;
+}
+
+.cardbox2 {
+	background: #F8F9FA;
+}
+
+.cardbox3 {
+	background: #F8F9FA;
+}
+
+.cardbox4 {
+	background: #F8F9FA;
+}
+
+.cardbox5 {
+	background: #F8F9FA;
+}
+
+.colorwhite {
+	color: black;
+}
+
+.vertical-nav {
+	min-width: 17rem;
+	width: 17rem;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+	transition: all 0.4s;
+}
+
+.bpn {
+	background-color: #1bc98e;
+}
+
+.ago {
+	padding: 1rem !important;
+}
+
+.rowQuick {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -35px;
+	margin-left: -5px;
+}
+
+.page-content {
+	width: calc(100% - 17rem);
+	margin-left: 17rem;
+	transition: all 0.4s;
+}
+
+
+/* for toggle behavior */
+
+#sidebar.active {
+	margin-left: -17rem;
+}
+
+#content.active {
+	width: 100%;
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	#sidebar {
+		margin-left: -17rem;
+	}
+	#sidebar.active {
+		margin-left: 0;
+	}
+	#content {
+		width: 100%;
+		margin: 0;
+	}
+	#content.active {
+		margin-left: 17rem;
+		width: calc(100% - 17rem);
+	}
+	#chart,
+	doutchart {
+		background: white;
+	}
+	.bpn {
+		background-color: #1bc98e;
+	}
+}
+
+body {
+	background: linear-gradient(to right, #599fd9, white);
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.separator {
+	margin: 1rem 0;
+	border-bottom: 1px dashed #fff;
+}
+
+.smallseparator {
+	margin: 0.4rem 0;
+	color: grey;
+	border-bottom: 1px dashed grey;
+}
+
+.card-body {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding: 1rem !important;
+}
+
+.text-uppercase {
+	letter-spacing: 0.1em;
+}
+
+.text-gray {
+	color: #aaa;
+}
+</style>
+    <script type="text/javascript">
+      window.onload = function() {
+        $(function() {
+          $("#sidebarCollapse").on("click", function() {
+            $("#sidebar, #content").toggleClass("active");
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="row">
+      <!-- Vertical navbar -->
+      <div class="vertical-nav bg-white" id="sidebar">
+        <div class="py-4 px-3 mb-4 bg-light">
+          <div class="media d-flex align-items-center">
+            <img
+              src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png"
+              alt="..."
+              width="65"
+              class="mr-3 rounded-circle img-thumbnail shadow-sm"
+            />
+            <div class="media-body">
+              <h4 class="m-0">Broker Admin</h4>
+              <p class="font-weight-light text-muted mb-0">Central-Division</p>
+            </div>
+          </div>
+        </div>
+        <p
+          class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"
+        >
+          Main
+        </p>
+        <ul class="nav flex-column bg-white mb-0">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link text-dark font-italic bg-light">
+              <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+              Dashboard
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+              Policy
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-user mr-3 text-primary fa-fw"></i>
+              Sanction broker user
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-search mr-3 text-primary fa-fw"></i>
+              Customer Search
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./BMSList.html" class="nav-link text-dark font-italic">
+              <i class="fa fa-search mr-3 text-primary fa-fw"></i>
+              BMS Error list
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa  fa-credit-card mr-3 text-primary fa-fw"></i>
+              Claims
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+              Billing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+              Documents
+            </a>
+          </li>
+        </ul>
+        <p
+          class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0"
+        >
+          More..
+        </p>
+        <ul class="nav flex-column bg-white mb-0">
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i
+                class="fa  fa-suitcase                  mr-3 text-primary fa-fw"
+              ></i>
+              Portfolio transfer
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+              <i
+                class="fa  fa-asterisk                  mr-3 text-primary fa-fw"
+              ></i>
+              Preferences
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End vertical navbar -->
+      <!-- Page content holder -->
+      <div class="page-content p-5" id="content">
+        <!-- Toggle button -->
+
+        <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i
+          class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+  
+        <h3 class="display-4 text-black">BMS failure list</h3> 
+       
+      <div class="separator"></div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+  <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Quote #</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Update</th>                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>R2323232</th>
+                    <td>Pending Clarification</td>
+                    <td>Property</td>
+                    <td>2 Mandatory Claim Information Fields </td>
+                 <th>
+                      <button id="btnUpdate" type="button" class="btn btn-updatelight rounded-pill shadow-sm px-4 mb-4">
+                        <a href="./BMSUpdate.html">
+                          <small class="text-uppercase font-weight-bold">Resubmit</small>
+                          </a>
+                      </button>
+                    </th>
+                 </tr>
+
+                 <tr>
+                    <th>R232323</th>
+                    <td>Missing Information</td>
+                    <td>Auto</td>
+                    <td>Missing Driving License</td>
+                 <th>
+                      <button id="btnUpdate" type="button" class="btn btn-updatelight rounded-pill shadow-sm px-4 mb-4">
+                          <a href="./BMSUpdate.html">
+                          <small class="text-uppercase font-weight-bold">Resubmit</small>
+                          </a></button>
+                    </th>
+                 </tr>
+        
+                </tbody>
+              </table>
+              </div>
+</div>
+
+ 
+      <!-- End demo content -->
+    </div>
+    <script>
+      // tell the embed parent frame the height of the content
+
+      if (window.parent && window.parent.parent) {
+        window.parent.parent.postMessage(
+          [
+            "resultsFrame",
+            {
+              height: document.body.getBoundingClientRect().height,
+              slug: "ko18ravd"
+            }
+          ],
+          "*"
+        );
+      }
+      // always overwrite window.name, in case users try to set it manually
+      window.name = "result";
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+  </body>
+</html>
