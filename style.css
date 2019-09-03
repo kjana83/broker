@@ -34,8 +34,9 @@ background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
 
 .display-4 {
 font-size: 2.0rem !important;
-font-weight: 300;
+font-weight: 500;
 line-height: 1.2;
+font-family: 'Open Sans', sans-serif;
 }
 
 .p-5 {
@@ -92,7 +93,7 @@ color: #fff!important;
 }
 
 .text-black {
-color: black !important;
+color: #252525 !important;
 }
 
 table {
@@ -182,7 +183,7 @@ background: #F8F9FA;
 
 .cardbox5 {
 background: #F8F9FA;
-}
+} 
 
 .colorwhite {
 color: black;
@@ -218,7 +219,7 @@ margin-left: -5px;
 
 .page-content {
 width: calc(100% - 17rem);
-margin-left: 17rem;
+margin-left: 18rem;
 transition: all 0.4s;
 }
 
@@ -259,14 +260,16 @@ background-color: #1bc98e;
 }
 
 body {
-background: linear-gradient(to right, #599fd9, white);
+background: white; /* linear-gradient(to right, #599fd9, white); */
 min-height: 100vh;
 overflow-x: hidden;
+color: #252525;
+font-family: 'Open Sans', sans-serif;
 }
 
 .separator {
 margin: 1rem 0;
-border-bottom: 1px dashed #fff;
+border-bottom: 1px dashed gray;
 }
 
 .smallseparator {
@@ -279,6 +282,8 @@ border-bottom: 1px dashed grey;
 -ms-flex: 1 1 auto;
 flex: 1 1 auto;
 padding: 1rem !important;
+background-color: #f8f9fa!important;
+border: 1px solid #f8f9fa!important;
 }
 
 .text-uppercase {
@@ -287,4 +292,24 @@ letter-spacing: 0.1em;
 
 .text-gray {
 color: #aaa;
+}
+.center-align
+{
+  text-align: center;
+}
+
+.chart-box {
+  border: 1px solid gray;
+  background-color: white;
+}
+
+.fa-angle-down, .fa-angle-up {
+  font-size: 32px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.btn-style, button {
+  background-color: #f8f9fa;
+  border: 1px solid lightgray;
 }
