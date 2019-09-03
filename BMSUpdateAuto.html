@@ -1,0 +1,359 @@
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Broker portal demo</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+  <script type="text/javascript">
+    //<![CDATA[
+    window.onload = function () {
+      $(function () {
+        // Sidebar toggle behavior
+
+        $("#sidebarCollapse").on("click", function () {
+          $("#sidebar, #content").toggleClass("active");
+        });
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <div class="row">
+    <!-- Vertical navbar -->
+    <div class="vertical-nav bg-white" id="sidebar">
+      <div class="py-4 px-3 mb-4 bg-light">
+        <div class="media d-flex align-items-center">
+          <img src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png" alt="..." width="65"
+            class="mr-3 rounded-circle img-thumbnail shadow-sm" />
+          <div class="media-body">
+            <h4 class="m-0">Broker Admin</h4>
+            <p class="font-weight-light text-muted mb-0">Central-Division</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">
+        Main
+      </p>
+      <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+          <a href="./index.html" class="nav-link text-dark  bg-light">
+            <i class="fa fa-th-large mr-3  fa-fw"></i>
+            Dashboard
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark ">
+            <i class="fa fa-address-card mr-3  fa-fw"></i>
+            Policy
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark ">
+            <i class="fa fa-user mr-3  fa-fw"></i>
+            Sanction broker user
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark ">
+            <i class="fa fa-search mr-3  fa-fw"></i>
+            Customer Search
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./BMSList.html" class="nav-link text-dark ">
+            <i class="fa fa-list mr-3  fa-fw"></i>
+            BMS Error list
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark ">
+            <i class="fa  fa-credit-card mr-3  fa-fw"></i>
+            Claims
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark ">
+            <i class="fa fa-cubes mr-3  fa-fw"></i>
+            Billing
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark ">
+            <i class="fa fa-picture-o mr-3  fa-fw"></i>
+            Documents
+          </a>
+        </li>
+      </ul>
+      <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">
+        More..
+      </p>
+      <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark ">
+            <i class="fa  fa-suitcase                  mr-3  fa-fw"></i>
+            Portfolio transfer
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark ">
+            <i class="fa  fa-asterisk                  mr-3  fa-fw"></i>
+            Preferences
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- End vertical navbar -->
+    <!-- Page content holder -->
+    <div class="page-content p-5" id="content">
+      <!-- Toggle button -->
+      <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i
+          class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+      <h3 class="display-4 text-black">BMS Update</h3>
+      <div class="separator"></div>
+      <div class="alert alert-light" role="alert">
+        <div class="row">
+          <div class="col-xs-12 col-md-2">
+            <h3 style="font-weight: bold">Quote:</h3>
+          </div>
+          <div class="col-xs-12 col-md-5">
+            <h3>R2323233</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-2">
+            <h3 style="font-weight: bold">Reason:</h3>
+          </div>
+          <div class="col-xs-12 col-md-9">
+            <h3>Missing conviction details</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="separator"></div>
+      <div class="row rowmargin">
+        <div class="col-xs-12 col-md-6">
+          <span style="font-weight: bold">How many major conviction have you had in last 3 years?</span>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">None</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">1 or More</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row rowmargin">
+        <div class="col-xs-12 col-md-6">
+          <span style="font-weight: bold">How many minor conviction you had in last 3 years?</span>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">None</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">1</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">2</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">3 or More</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <button id="btnUpdate" type="button" class="btn btn-light btn-style rounded-pill shadow-sm px-4 mb-4">
+
+            <a data-toggle="modal" data-target="#exampleModal">
+              <small class="text-uppercase font-weight-bold">Submit</small>
+            </a>
+          </button>
+
+
+        </div>
+      </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">BMS Review Summary</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-xs-12 col-md-12">
+                  <span>Here's summary of information you have provided for your insurance quote. Please review and
+                    confirm the information below.</span>
+                </div>
+              </div>
+              <div class="smallseparator"></div>
+
+
+              <div class="row">
+                <div class="col-xs-12 col-md-4">
+                  <span style="font-weight: bold">Policy Term</span>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                  1 Year
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-4">
+                  <span style="font-weight: bold">Coverage Date</span>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                  01-Sep-2019
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-md-4">
+                  <span style="font-weight: bold">Address </span>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                  20 Duplex Ave, Toronto </div>
+              </div>
+
+            </div>
+
+            <div class="smallseparator"></div>
+            <div class="row rowpadding">
+              <div class="col-xs-12 col-md-12">
+                <span style="font-weight: bold">Your Information:</span>
+              </div>
+
+            </div>
+
+            <div class="smallseparator"></div>
+
+
+            <div class="row  rowpadding">
+              <div class="col-xs-12 col-md-4">
+                <span style="font-weight: bold">Name </span>
+              </div>
+              <div class="col-xs-12 col-md-8">
+                Test test
+              </div>
+            </div>
+
+            <div class="row rowpadding">
+              <div class="col-xs-12 col-md-4">
+                <span style="font-weight: bold">Date of birth </span>
+              </div>
+              <div class="col-xs-12 col-md-8">
+                01-jan-1992 </div>
+            </div>
+
+            <div class="row  rowpadding">
+              <div class="col-xs-12 col-md-4">
+                <span style="font-weight: bold">Email Address </span>
+              </div>
+              <div class="col-xs-12 col-md-8">
+                test@test.com </div>
+            </div>
+
+            <div class="row  rowpadding">
+              <div class="col-xs-12 col-md-4">
+                <span style="font-weight: bold">Phone </span>
+              </div>
+              <div class="col-xs-12 col-md-8">
+                416-555-2525 </div>
+            </div>
+
+            <div class="row  rowpadding">
+              <div class="col-xs-12 col-md-4">
+                <span style="font-weight: bold">Credit consent </span>
+              </div>
+              <div class="col-xs-12 col-md-8">
+                Yes </div>
+            </div>
+           
+
+
+            <div class="modal-footer">
+
+
+              <button id="btnConfirm" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4">
+
+                <a data-dismiss="modal">
+                  <small class="text-uppercase font-weight-bold">Close</small>
+                </a>
+              </button>
+
+
+              <button id="btnConfirm" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4">
+
+                <a href="./BMSConfirmation.html">
+                  <small class="text-uppercase font-weight-bold">Continue</small>
+                </a>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- End demo content -->
+    </div>
+    <script>
+      // tell the embed parent frame the height of the content
+
+      if (window.parent && window.parent.parent) {
+        window.parent.parent.postMessage(
+          [
+            "resultsFrame",
+            {
+              height: document.body.getBoundingClientRect().height,
+              slug: "ko18ravd"
+            }
+          ],
+          "*"
+        );
+      }
+      // always overwrite window.name, in case users try to set it manually
+      window.name = "result";
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+</body>
+
+</html>
